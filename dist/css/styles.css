@@ -48,6 +48,165 @@ a {
 /*******************************
     Header
 ********************************/
+body {
+  margin: 0;
+  font-family: serif;
+  background: #e7e7e2; }
+
+.oriental-header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #cfd6d1), color-stop(50%, #3a1f22));
+  background: -o-linear-gradient(top, #cfd6d1 50%, #3a1f22 50%);
+  background: linear-gradient(to bottom, #cfd6d1 50%, #3a1f22 50%);
+  color: white; }
+
+/* Landscape Layers */
+.landscape {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1; }
+
+.imagination {
+  top: 0;
+  background-image: url("imagination-silhouette.png");
+  /* semi-transparent */
+  opacity: 0.6; }
+
+.reality {
+  top: 0;
+  background-image: url("reality-silhouette.png");
+  /* sharper layer */
+  opacity: 0.9; }
+
+/* Central Orb */
+.central-orb-svg {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -30%);
+      -ms-transform: translate(-50%, -30%);
+          transform: translate(-50%, -30%);
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: float 6s ease-in-out infinite;
+          animation: float 6s ease-in-out infinite; }
+
+.central-orb-svg.glass {
+  backdrop-filter: blur(10px) brightness(1.1);
+  -webkit-backdrop-filter: blur(10px) brightness(1.1);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden; }
+
+/* Light floating animation */
+@-webkit-keyframes float {
+  0%, 100% {
+    -webkit-transform: translate(-50%, -30%) translateY(0px);
+            transform: translate(-50%, -30%) translateY(0px); }
+  50% {
+    -webkit-transform: translate(-50%, -30%) translateY(-10px);
+            transform: translate(-50%, -30%) translateY(-10px); } }
+@keyframes float {
+  0%, 100% {
+    -webkit-transform: translate(-50%, -30%) translateY(0px);
+            transform: translate(-50%, -30%) translateY(0px); }
+  50% {
+    -webkit-transform: translate(-50%, -30%) translateY(-10px);
+            transform: translate(-50%, -30%) translateY(-10px); } }
+
+.central-orb-svg svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+/* Typography inside orb */
+.orb-text {
+  text-align: center;
+  color: #222;
+  z-index: 2;
+  pointer-events: none; }
+
+.vertical-zh {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  font-size: 24px;
+  font-weight: bold; }
+
+.title {
+  font-size: 28px;
+  margin-top: 10px; }
+
+.vertical-zh {
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  font-size: 24px;
+  font-weight: bold; }
+
+/* Title */
+.title {
+  font-size: 28px;
+  margin-top: 10px;
+  color: #333; }
+
+/* Illustration Section */
+.lower-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background: url("birds-illustration.png") no-repeat right bottom;
+  background-size: contain;
+  z-index: 1; }
+
+/* Labels */
+.side-label {
+  position: absolute;
+  top: 20%;
+  font-size: 14px;
+  color: #333; }
+
+.side-label.left {
+  left: 20px; }
+
+.side-label.right {
+  right: 20px; }
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 16px;
+  color: #eee; }
+
 /*******************************
    Categories and Forums
 ********************************/
