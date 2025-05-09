@@ -136,7 +136,7 @@ body {
 .oriental-header {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   color: var(--text-primary);
   z-index: 0; }
