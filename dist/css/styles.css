@@ -31,20 +31,21 @@ a {
 ********************************/
 :root {
   --font-body: 'Lato', sans-serif;
-  --font-head: 'Roboto Condensed', sans-serif;
+  --font-head: 'UnifrakturMaguntia', cursive;
   --font-fa: 'Font Awesome 6 Pro';
+  --font-accent: 'LXGW WenKai Mono TC', monospace;
   --size-xs: 8px;
   --size-sm: 10px;
   --size-md: 12px;
   --size-lg: 14px;
   --size-xl: 16px;
   --rgb: 145, 74, 74;
-  --bg-primary: rgb(231 231 226);
-  --bg-secondary: rgb(30, 30, 30);
+  --bg-primary: rgb(50, 50, 82);
+  --bg-secondary: rgb(95, 124, 106);
   --bg-tertiary: rgb(45, 45, 45);
   --bg-quaternary: rgb(55, 55, 55);
   --bg-overlay: rgba(18, 18, 18, 0.5);
-  --text-primary: rgb(198, 198, 198);
+  --text-primary: rgb(240, 177, 95);
   --text-secondary: rgb(245, 245, 245);
   --border-primary: rgb(80, 80, 80);
   --border-secondary: rgb(198, 198, 198);
@@ -58,8 +59,12 @@ a {
     Global
 ********************************/
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg-primary, #121212); }
+  margin: 0;
+  font-family: serif;
+  background-color: var(--bg-primary);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(45, 43, 69, 0)), color-stop(10%, #2d2b45));
+  background: -o-linear-gradient(top, rgba(45, 43, 69, 0) 0%, #2d2b45 10%);
+  background: linear-gradient(to bottom, rgba(45, 43, 69, 0) 0%, #2d2b45 10%); }
 
 /*******************************
     Utilities
@@ -70,50 +75,31 @@ body {
 /*******************************
     Header
 ********************************/
-body {
-  margin: 0;
-  font-family: serif;
-  background: var(--bg-primary); }
-
 .oriental-header {
   position: relative;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #cfd6d1), color-stop(50%, #3a1f22));
-  background: -o-linear-gradient(top, #cfd6d1 50%, #3a1f22 50%);
-  background: linear-gradient(to bottom, #cfd6d1 50%, #3a1f22 50%);
-  color: var(--text-primary); }
+  color: var(--text-primary);
+  z-index: 0; }
 
 /* Landscape Layers */
 .landscape {
   position: absolute;
   width: 100%;
-  height: 50%;
+  height: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   z-index: 1; }
 
 .imagination {
   top: 0;
-  background-image: url("imagination-silhouette.png");
-  /* semi-transparent */
-  opacity: 0.6; }
-
-.reality {
-  top: 0;
-  background-image: url("reality-silhouette.png");
-  /* sharper layer */
-  opacity: 0.9; }
+  opacity: 1; }
 
 /* Central Orb */
 .central-orb-svg {
   position: absolute;
-  top: 30%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -30%);
-      -ms-transform: translate(-50%, -30%);
-          transform: translate(-50%, -30%);
+  top: 10%;
   width: 100vw;
   height: 100vh;
   z-index: 2;
@@ -133,9 +119,21 @@ body {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-animation: float 6s ease-in-out infinite;
-          animation: float 6s ease-in-out infinite; }
+          justify-content: center; }
+
+.dragon-illustration {
+  position: relative;
+  max-height: 200px;
+  /* Adjust for balance */
+  width: auto;
+  margin-bottom: 20px;
+  /* spacing above text */
+  z-index: 3; }
+
+.dragon-illustration svg {
+  width: auto;
+  height: 100%;
+  display: block; }
 
 .central-orb-svg.glass {
   backdrop-filter: blur(10px) brightness(1.1);
@@ -152,38 +150,25 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; }
+  z-index: 0; }
 
 /* Typography inside orb */
 .orb-text {
   text-align: center;
-  color: #222;
   z-index: 2;
-  pointer-events: none; }
-
-.vertical-zh {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  font-size: 24px;
-  font-weight: bold; }
-
-.title {
-  font-size: 28px;
-  margin-top: 10px; }
-
-.vertical-zh {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  font-size: 24px;
-  font-weight: bold; }
+  pointer-events: none;
+  font-family: var(--font-head); }
 
 /* Title */
 .title {
-  font-size: 28px;
-  margin-top: 10px;
-  color: #333; }
+  font-weight: bold;
+  font-size: 65px;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: 0.05em;
+  margin: 0 auto;
+  top: -60px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 8px rgba(255, 255, 255, 0.1); }
 
 /* Illustration Section */
 .lower-section {
@@ -214,6 +199,19 @@ body {
   left: 20px;
   font-size: 16px;
   color: #eee; }
+
+[data-speed] {
+  will-change: transform;
+  -webkit-transition: -webkit-transform 0.05s ease-out;
+  transition: -webkit-transform 0.05s ease-out;
+  -o-transition: transform 0.05s ease-out;
+  transition: transform 0.05s ease-out;
+  transition: transform 0.05s ease-out, -webkit-transform 0.05s ease-out; }
+
+.responsive-svg {
+  width: 100%;
+  height: auto;
+  display: block; }
 
 /*******************************
    Categories and Forums

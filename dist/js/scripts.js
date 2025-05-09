@@ -226,3 +226,24 @@ if(pageType === 'store') {
     <a href="?act=store&code=edit_inventory" class="staffOnly">Edit Inventory</a></div></div>`;
     */
 }
+
+// parallax.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  const parallaxElements = document.querySelectorAll('[data-speed]');
+
+  const applyParallax = () => {
+    const scrollY = window.scrollY;
+
+    parallaxElements.forEach(el => {
+      const speed = parseFloat(el.dataset.speed) || 0;
+      el.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  };
+
+  // Initial call to set positions
+  applyParallax();
+
+  // Apply on scroll
+  window.addEventListener('scroll', applyParallax);
+});

@@ -4,47 +4,33 @@
     Header
 ********************************/
 
-body {
-    margin: 0;
-    font-family: serif;
-    background: var(--bg-primary);
-  }
-  
   .oriental-header {
     position: relative;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background: linear-gradient(to bottom, #cfd6d1 50%, #3a1f22 50%);
     color: var(--text-primary);
+    z-index: 0;
   }
   
   /* Landscape Layers */
   .landscape {
     position: absolute;
     width: 100%;
-    height: 50%;
+    height: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     z-index: 1;
   }
   .imagination {
     top: 0;
-    background-image: url('imagination-silhouette.png'); /* semi-transparent */
-    opacity: 0.6;
-  }
-  .reality {
-    top: 0;
-    background-image: url('reality-silhouette.png'); /* sharper layer */
-    opacity: 0.9;
+    opacity: 1;
   }
   
   /* Central Orb */
   .central-orb-svg {
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -30%);
+    top: 10%;
     width: 100vw;
     height: 100vh;
     z-index: 2;
@@ -52,7 +38,20 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: float 6s ease-in-out infinite;
+  }
+
+  .dragon-illustration {
+    position: relative;
+    max-height: 200px; /* Adjust for balance */
+    width: auto;
+    margin-bottom: 20px; /* spacing above text */
+    z-index: 3;
+  }
+
+  .dragon-illustration svg {
+    width: auto;
+    height: 100%;
+    display: block;
   }
   
   .central-orb-svg.glass {
@@ -75,39 +74,29 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 0;
   }
   
   /* Typography inside orb */
   .orb-text {
     text-align: center;
-    color: #222;
     z-index: 2;
     pointer-events: none;
+    font-family: var(--font-head);
   }
-  
-  .vertical-zh {
-    writing-mode: vertical-rl;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .title {
-    font-size: 28px;
-    margin-top: 10px;
-  }  
-  
-  .vertical-zh {
-    writing-mode: vertical-rl;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+
   /* Title */
   .title {
-    font-size: 28px;
-    margin-top: 10px;
-    color: #333;
+    font-weight: bold;
+    font-size: 65px;
+    color: var(--text-primary);
+    line-height: 1;
+    letter-spacing: 0.05em;
+    margin: 0 auto;
+    top: -60px;
+    text-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.4),
+      0 0 8px rgba(255, 255, 255, 0.1);
   }
   
   /* Illustration Section */
@@ -143,3 +132,13 @@ body {
     color: #eee;
   }
   
+[data-speed] {  
+  will-change: transform;
+  transition: transform 0.05s ease-out;
+}
+
+.responsive-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
