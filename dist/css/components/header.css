@@ -87,9 +87,10 @@
         cursor: default; }
 
 .header-accent {
-  font-family: var(--font-body);
+  font-family: var(--head-accent);
   font-style: italic;
-  font-size: 20px;
+  font-weight: normal;
+  font-size: 30px;
   color: var(--text-secondary);
   margin-top: -20px; }
 

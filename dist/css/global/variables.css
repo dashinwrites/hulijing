@@ -4,6 +4,7 @@
 :root {
   --font-body: 'Lato', sans-serif;
   --font-head: 'UnifrakturMaguntia', cursive;
+  --head-accent: "Rouge Script", cursive;
   --font-fa: 'Font Awesome 6 Pro';
   --font-accent: 'LXGW WenKai Mono TC', monospace;
   --size-xs: 8px;
