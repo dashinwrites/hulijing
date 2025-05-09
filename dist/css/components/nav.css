@@ -13,7 +13,8 @@
     z-index: 11;
     height: 20px;
     width: 100%;
-    backdrop-filter: blur(2.5px); }
+    backdrop-filter: blur(2.5px);
+    border-bottom: 1px solid var(--text-primary); }
   .nav .nav--inner {
     padding: 0 10px; }
   .nav #navstrip {
