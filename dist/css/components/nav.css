@@ -15,8 +15,7 @@
     width: 100%;
     backdrop-filter: blur(2.5px); }
   .nav .nav--inner {
-    padding: 0 10px;
-    border-bottom: 1px solid black; }
+    padding: 0 10px; }
   .nav #navstrip {
     flex: 0 0 auto;
     height: max-content;
