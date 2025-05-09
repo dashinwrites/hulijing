@@ -1,74 +1,54 @@
-@import '../global/mixins.scss';
+@import "../global/mixins.scss";
 
 /*******************************
     Header
 ********************************/
 
-  .oriental-header {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    color: var(--text-primary);
-    z-index: 0;
-  }
-  
-  /* Landscape Layers */
-  .landscape {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 1;
-  }
-  .imagination {
+.oriental-header {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  color: var(--text-primary);
+  z-index: 0;
+}
+
+/* Landscape Layers */
+.landscape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+
+  &.imagination {
     top: 0;
     opacity: 1;
   }
-  
-  /* Central Orb */
-  .central-orb-svg {
-    position: absolute;
-    top: 10%;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+}
 
-  .dragon-illustration {
-    position: relative;
-    max-height: 200px; /* Adjust for balance */
-    width: auto;
-    margin-bottom: 20px; /* spacing above text */
-    z-index: 3;
-  }
+/* Central Orb */
+.central-orb-svg {
+  position: absolute;
+  top: 10%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  .dragon-illustration svg {
-    width: auto;
-    height: 100%;
-    display: block;
-  }
-  
-  .central-orb-svg.glass {
+  &.glass {
     backdrop-filter: blur(10px) brightness(1.1);
     -webkit-backdrop-filter: blur(10px) brightness(1.1);
     border-radius: 50%;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
   }
-  
-  /* Light floating animation */
-  // @keyframes float {
-  //   0%, 100% { transform: translate(-50%, -30%) translateY(0px); }
-  //   50%      { transform: translate(-50%, -30%) translateY(-10px); }
-  // }
-  
-  .central-orb-svg svg {
+
+  svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -76,63 +56,105 @@
     height: 100%;
     z-index: 0;
   }
-  
-  /* Typography inside orb */
-  .orb-text {
-    text-align: center;
-    z-index: 2;
-    pointer-events: none;
-    font-family: var(--font-head);
-  }
 
-  /* Title */
-  .title {
+  .dragon-illustration {
+    position: relative;
+    max-height: 200px;
+    width: auto;
+    margin-bottom: 20px;
+    z-index: 3;
+
+    svg {
+      width: auto;
+      height: 100%;
+      display: block;
+    }
+  }
+}
+
+/* Typography inside orb */
+.orb-text {
+  text-align: center;
+  z-index: 2;
+  font-family: var(--font-head);
+
+  &.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-weight: bold;
     font-size: 65px;
     color: var(--text-primary);
     line-height: 1;
+    gap: 0.03em;
     letter-spacing: 0.05em;
     margin: 0 auto;
     top: -60px;
-    text-shadow: 
-      0 2px 4px rgba(0, 0, 0, 0.4),
-      0 0 8px rgba(255, 255, 255, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4),
+                 0 0 8px rgba(255, 255, 255, 0.1);
+    pointer-events: auto;
+
+    .line {
+      display: block;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        cursor: default;
+      }
+    }
   }
-  
-  /* Illustration Section */
-  .lower-section {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30%;
-    background: url('birds-illustration.png') no-repeat right bottom;
-    background-size: contain;
-    z-index: 1;
-  }
-  
-  /* Labels */
-  .side-label {
-    position: absolute;
-    top: 20%;
-    font-size: 14px;
-    color: #333;
-  }
-  .side-label.left {
+}
+
+.header-accent {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-top: -20px;
+}
+
+/* Illustration Section */
+.lower-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
+  background: url("birds-illustration.png") no-repeat right bottom;
+  background-size: contain;
+  z-index: 1;
+}
+
+/* Labels */
+.side-label {
+  position: absolute;
+  top: 20%;
+  font-size: 14px;
+  color: #333;
+
+  &.left {
     left: 20px;
   }
-  .side-label.right {
+
+  &.right {
     right: 20px;
   }
-  
-  .caption {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    font-size: 16px;
-    color: #eee;
-  }
-  
-[data-speed] {  
+}
+
+.caption {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 16px;
+  color: #eee;
+}
+
+/* Motion */
+[data-speed] {
   will-change: transform;
   transition: transform 0.05s ease-out;
 }

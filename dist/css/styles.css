@@ -91,10 +91,9 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 1; }
-
-.imagination {
-  top: 0;
-  opacity: 1; }
+  .landscape.imagination {
+    top: 0;
+    opacity: 1; }
 
 /* Central Orb */
 .central-orb-svg {
@@ -120,55 +119,83 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
-
-.dragon-illustration {
-  position: relative;
-  max-height: 200px;
-  /* Adjust for balance */
-  width: auto;
-  margin-bottom: 20px;
-  /* spacing above text */
-  z-index: 3; }
-
-.dragon-illustration svg {
-  width: auto;
-  height: 100%;
-  display: block; }
-
-.central-orb-svg.glass {
-  backdrop-filter: blur(10px) brightness(1.1);
-  -webkit-backdrop-filter: blur(10px) brightness(1.1);
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-  overflow: hidden; }
-
-/* Light floating animation */
-.central-orb-svg svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; }
+  .central-orb-svg.glass {
+    backdrop-filter: blur(10px) brightness(1.1);
+    -webkit-backdrop-filter: blur(10px) brightness(1.1);
+    border-radius: 50%;
+    -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden; }
+  .central-orb-svg svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; }
+  .central-orb-svg .dragon-illustration {
+    position: relative;
+    max-height: 200px;
+    width: auto;
+    margin-bottom: 20px;
+    z-index: 3; }
+    .central-orb-svg .dragon-illustration svg {
+      width: auto;
+      height: 100%;
+      display: block; }
 
 /* Typography inside orb */
 .orb-text {
   text-align: center;
   z-index: 2;
-  pointer-events: none;
   font-family: var(--font-head); }
+  .orb-text.title {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: bold;
+    font-size: 65px;
+    color: var(--text-primary);
+    line-height: 1;
+    gap: 0.03em;
+    letter-spacing: 0.05em;
+    margin: 0 auto;
+    top: -60px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 8px rgba(255, 255, 255, 0.1);
+    pointer-events: auto; }
+    .orb-text.title .line {
+      display: block;
+      line-height: 1;
+      margin: 0;
+      padding: 0;
+      -webkit-transition: text-shadow 0.3s ease, -webkit-transform 0.3s ease;
+      transition: text-shadow 0.3s ease, -webkit-transform 0.3s ease;
+      -o-transition: transform 0.3s ease, text-shadow 0.3s ease;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+      transition: transform 0.3s ease, text-shadow 0.3s ease, -webkit-transform 0.3s ease; }
+      .orb-text.title .line:hover {
+        -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+                transform: scale(1.05);
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        cursor: default; }
 
-/* Title */
-.title {
-  font-weight: bold;
-  font-size: 65px;
-  color: var(--text-primary);
-  line-height: 1;
-  letter-spacing: 0.05em;
-  margin: 0 auto;
-  top: -60px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4), 0 0 8px rgba(255, 255, 255, 0.1); }
+.header-accent {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-top: -20px; }
 
 /* Illustration Section */
 .lower-section {
@@ -186,12 +213,10 @@ body {
   top: 20%;
   font-size: 14px;
   color: #333; }
-
-.side-label.left {
-  left: 20px; }
-
-.side-label.right {
-  right: 20px; }
+  .side-label.left {
+    left: 20px; }
+  .side-label.right {
+    right: 20px; }
 
 .caption {
   position: absolute;
@@ -200,6 +225,7 @@ body {
   font-size: 16px;
   color: #eee; }
 
+/* Motion */
 [data-speed] {
   will-change: transform;
   -webkit-transition: -webkit-transform 0.05s ease-out;
