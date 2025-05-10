@@ -225,4 +225,29 @@ if(pageType === 'store') {
     <a href="?act=store&code=edit_points" class="staffOnly">Edit Points</a>
     <a href="?act=store&code=edit_inventory" class="staffOnly">Edit Inventory</a></div></div>`;
     */
+<<<<<<< HEAD
 }
+=======
+}
+
+// parallax.js
+
+document.addEventListener('DOMContentLoaded', () => {
+  const parallaxElements = document.querySelectorAll('[data-speed]');
+
+  const applyParallax = () => {
+    const scrollY = window.scrollY;
+
+    parallaxElements.forEach(el => {
+      const speed = parseFloat(el.dataset.speed) || 0;
+      el.style.transform = `translateY(${scrollY * speed}px)`;
+    });
+  };
+
+  // Initial call to set positions
+  applyParallax();
+
+  // Apply on scroll
+  window.addEventListener('scroll', applyParallax);
+});
+>>>>>>> 0e80c3b6e1d8fd39e90ad4cb80361d406f4a103e

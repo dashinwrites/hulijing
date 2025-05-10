@@ -3,3 +3,45 @@
 /*******************************
     Navigation
 ********************************/
+
+.nav {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    z-index: 10;
+    left: 0;
+    background: var(--bg-primary);
+
+    &--top {
+        top: 0;
+        z-index: 11;
+        height: 20px;
+        width: 100%;
+        backdrop-filter: blur(2.5px);
+        border-bottom: 1px solid var(--text-primary);
+    }
+
+    .nav--inner {
+        padding: 0 10px;
+    }
+
+    #navstrip {
+        flex: 0 0 auto;
+        height: max-content;
+        line-height: 160%;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+        font-size: var(--size-xs);
+        color: var(--text-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+    }
+
+    a {
+            font-size: var(--size-xs);
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+}
