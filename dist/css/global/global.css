@@ -1,8 +1,6 @@
 /*******************************
     Global
 ********************************/
-<<<<<<< HEAD
-=======
 body {
   margin: 0;
   background-color: var(--bg-primary);
@@ -22,4 +20,3 @@ a {
   font-size: var(--size-md);
   color: var(--text-secondary);
   letter-spacing: 0.2em; }
->>>>>>> 0e80c3b6e1d8fd39e90ad4cb80361d406f4a103e

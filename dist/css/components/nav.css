@@ -1,8 +1,6 @@
 /*******************************
     Navigation
 ********************************/
-<<<<<<< HEAD
-=======
 .nav {
   display: flex;
   position: fixed;
@@ -35,4 +33,3 @@
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.2em; }
->>>>>>> 0e80c3b6e1d8fd39e90ad4cb80361d406f4a103e
