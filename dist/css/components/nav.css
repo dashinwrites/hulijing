@@ -32,4 +32,5 @@
     font-size: var(--size-xs);
     color: var(--text-primary);
     text-transform: uppercase;
-    letter-spacing: 0.2em; }
+    letter-spacing: 0.2em;
+    padding-right: 10px; }
